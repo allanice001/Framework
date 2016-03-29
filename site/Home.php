@@ -1,1 +1,4 @@
-Hello Cruel World!
+<?php
+s('AcmeFramework');
+ ?>
+ Hello Cruel World!
