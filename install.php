@@ -149,6 +149,14 @@
 				<td class="fail">Neither <code>$_SERVER['REQUEST_URI']</code>, <code>$_SERVER['PHP_SELF']</code>, or <code>$_SERVER['PATH_INFO']</code> is available.</td>
 			<?php endif ?>
 		</tr>
+		<tr>
+			<th>Mod Rewrite</th>
+			<?php if (in_array('mod_rewrite', apache_get_modules())):?>
+				<td class="pass">Pass</td>
+			<?php else: $failed = TRUE ?>
+				<td class="fail">It doesn't look like Mod Rewrite is enabled</td>
+			<?php endif ?>
+		</tr>
 	</table>
 
 	<?php if ($failed === TRUE): ?>
