@@ -57,20 +57,11 @@
 			<?php endif ?>
 		</tr>
 		<tr>
-<!--
-			<th>System Directory</th>
-			<?php if (is_dir(SYSPATH) AND is_file(SYSPATH.'classes/Kohana'.EXT)): ?>
-				<td class="pass"><?php echo SYSPATH ?></td>
-			<?php else: $failed = FALSE ?>
-				<td class="fail">The configured <code>system</code> directory does not exist or does not contain required files.</td>
-			<?php endif ?>
-		</tr>
--->
 		<tr>
 			<th>Application Directory</th>
-			<?php if (is_dir(ROOT) AND is_file(APPPATH.'bootstrap'.EXT)): ?>
-				<td class="pass"><?php echo APPPATH ?></td>
-			<?php else: $failed = FALSE ?>
+			<?php if (is_dir(ROOT) AND is_file(ROOT.'core.php')): ?>
+				<td class="pass"><?php echo ROOT ?></td>
+			<?php else: $failed = True ?>
 				<td class="fail">The configured <code>application</code> directory does not exist or does not contain required files.</td>
 			<?php endif ?>
 		</tr>
@@ -164,7 +155,7 @@
 		<p id="results" class="fail">✘ AcmeFramework may not work correctly with your environment.</p>
 	<?php else: ?>
 		<p id="results" class="pass">✔ Your environment passed all requirements.<br />
-			Remove or rename the <code>install<?php echo EXT ?></code> file now.</p>
+			Remove or rename the <code>install.php</code> file now.</p>
 	<?php endif ?>
 
 	<h1>Optional Tests</h1>
