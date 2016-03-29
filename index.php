@@ -16,9 +16,6 @@
 		}
 	}
 
-	function debug($data) {
-		echo '<pre>' . print_r($data, true) . '</pre>';
-	}
 	$files = file_list(getcwd().'/lib', '.php');
 	foreach ($files as $file) {
 		include './lib/'. $file;
