@@ -59,7 +59,7 @@
 		<tr>
 		<tr>
 			<th>Application Directory</th>
-			<?php if (is_dir(ROOT) AND is_file(ROOT.'core.php')): ?>
+			<?php if (is_dir(ROOT) AND is_file(ROOT.'lib/core.php')): ?>
 				<td class="pass"><?php echo ROOT ?></td>
 			<?php else: $failed = True ?>
 				<td class="fail">The configured <code>application</code> directory does not exist or does not contain required files.</td>
