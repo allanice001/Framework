@@ -76,7 +76,7 @@
 		</tr>
 		<tr>
 			<th>Cache Directory</th>
-			<?php if (is_dir(ROOT) AND is_dir(ROOT.'cache') AND is_writable(APPPATH.'cache')): ?>
+			<?php if (is_dir(ROOT) AND is_dir(ROOT.'cache') AND is_writable(ROOT.'cache')): ?>
 				<td class="pass"><?php echo ROOT.'cache/' ?></td>
 			<?php else: $failed = TRUE ?>
 				<td class="fail">The <code><?php echo ROOT.'cache/' ?></code> directory is not writable.</td>
@@ -84,7 +84,7 @@
 		</tr>
 		<tr>
 			<th>Logs Directory</th>
-			<?php if (is_dir(ROOT) AND is_dir(ROOT.'logs') AND is_writable(APPPATH.'logs')): ?>
+			<?php if (is_dir(ROOT) AND is_dir(ROOT.'logs') AND is_writable(ROOT.'logs')): ?>
 				<td class="pass"><?php echo ROOT.'logs/' ?></td>
 			<?php else: $failed = TRUE ?>
 				<td class="fail">The <code><?php echo ROOT.'logs/' ?></code> directory is not writable.</td>
