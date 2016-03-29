@@ -1,7 +1,6 @@
 <?php
-	//new WelcomeClass();
-
-	define('s_notpl', 1);
+    s('AcmeFramework');
+    define('s_notpl', 1);
 ?>
 
 <html><head>
