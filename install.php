@@ -57,35 +57,37 @@
 			<?php endif ?>
 		</tr>
 		<tr>
+<!--
 			<th>System Directory</th>
 			<?php if (is_dir(SYSPATH) AND is_file(SYSPATH.'classes/Kohana'.EXT)): ?>
 				<td class="pass"><?php echo SYSPATH ?></td>
-			<?php else: $failed = TRUE ?>
+			<?php else: $failed = FALSE ?>
 				<td class="fail">The configured <code>system</code> directory does not exist or does not contain required files.</td>
 			<?php endif ?>
 		</tr>
+-->
 		<tr>
 			<th>Application Directory</th>
-			<?php if (is_dir(APPPATH) AND is_file(APPPATH.'bootstrap'.EXT)): ?>
+			<?php if (is_dir(ROOT) AND is_file(APPPATH.'bootstrap'.EXT)): ?>
 				<td class="pass"><?php echo APPPATH ?></td>
-			<?php else: $failed = TRUE ?>
+			<?php else: $failed = FALSE ?>
 				<td class="fail">The configured <code>application</code> directory does not exist or does not contain required files.</td>
 			<?php endif ?>
 		</tr>
 		<tr>
 			<th>Cache Directory</th>
-			<?php if (is_dir(APPPATH) AND is_dir(APPPATH.'cache') AND is_writable(APPPATH.'cache')): ?>
-				<td class="pass"><?php echo APPPATH.'cache/' ?></td>
+			<?php if (is_dir(ROOT) AND is_dir(ROOT.'cache') AND is_writable(APPPATH.'cache')): ?>
+				<td class="pass"><?php echo ROOT.'cache/' ?></td>
 			<?php else: $failed = TRUE ?>
-				<td class="fail">The <code><?php echo APPPATH.'cache/' ?></code> directory is not writable.</td>
+				<td class="fail">The <code><?php echo ROOT.'cache/' ?></code> directory is not writable.</td>
 			<?php endif ?>
 		</tr>
 		<tr>
 			<th>Logs Directory</th>
-			<?php if (is_dir(APPPATH) AND is_dir(APPPATH.'logs') AND is_writable(APPPATH.'logs')): ?>
-				<td class="pass"><?php echo APPPATH.'logs/' ?></td>
+			<?php if (is_dir(ROOT) AND is_dir(ROOT.'logs') AND is_writable(APPPATH.'logs')): ?>
+				<td class="pass"><?php echo ROOT.'logs/' ?></td>
 			<?php else: $failed = TRUE ?>
-				<td class="fail">The <code><?php echo APPPATH.'logs/' ?></code> directory is not writable.</td>
+				<td class="fail">The <code><?php echo ROOT.'logs/' ?></code> directory is not writable.</td>
 			<?php endif ?>
 		</tr>
 		<tr>
