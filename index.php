@@ -65,17 +65,18 @@
 		header('Content-type: text/html; charset=utf-8');
 	}
 
-	$keywords = $ini_array['keywords'];
-	$description = $ini_array['description'];
+	$S_KEYWORDS = $ini_array['keywords'];
+	$S_DESCRIPTION = $ini_array['description'];
 
-	$debug = true;
+	$S_DEBUG = true;
+
 	echo
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'.
 	'<html xmlns="http://www.w3.org/1999/xhtml">'.
 	'<head>'.
 		'<title>'. s() .' - '. t() .'</title>'.
-        ( $keywords ? '<meta name="description" content="' . htmlentities($keywords) . '" />' : '').
-        ( $description ? '<meta name="description" content="' . htmlentities($description) . '" />' : '').
+        ( $S_KEYWORDS ? '<meta name="description" content="' . htmlentities($S_KEYWORDS) . '" />' : '').
+        ( $S_DESCRIPTION ? '<meta name="description" content="' . htmlentities($S_DESCRIPTION) . '" />' : '').
 		'<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />'.
         '<meta name="robots" content="all, index, follow" />' .
         '<meta name="author" content="AcmeAWS">'.
@@ -87,7 +88,7 @@
         '<meta name="Distribution" content="Global">'.
         '<meta name="Robots" content="INDEX,FOLLOW">'.
         '<meta name="Revisit-after" content="7 Days">'.
-        '<meta name="generator" content="Oceanside Trading 654 v 3.1 E" />' .
+        '<meta name="generator" content="Oceanside Trading 654 v 3.1 O" />' .
         '<link rel="shortcut icon" href="/assets/images/icon.ico" />';
 /*
 	      '<link href="/assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">'.
@@ -166,7 +167,7 @@
 */
         echo '</div>';
 
-	if($debug) {
+	if($S_DEBUG) {
 		echo
 		'<div class="debug">'. debug($GLOBALS) .'</div>';
 	}

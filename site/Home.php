@@ -10,16 +10,24 @@ $token = array(
 );
 
 $jwt = JWT::encode($token, $key);
-
+echo '<p>
+JWT Token
+</p>';
 debug($jwt);
 
 $decoded = JWT::decode($jwt, $key, array('HS256'));
-
-print_r($decoded);
+echo '<p>
+Decoded Object
+</p>';
+debug($decoded);
 
 $decoded_array = (array) $decoded;
-
-print_r($decoded_array);
+echo '<p>
+Decoded Array
+</p>';
+debug($decoded_array);
 
  ?>
- Hello Cruel World!
+
+
+ <h1>Hello Cruel World!</h1>
